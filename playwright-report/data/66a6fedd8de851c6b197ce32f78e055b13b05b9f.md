@@ -1,0 +1,42 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "SentinelHub" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e9]: SentinelHub
+        - generic [ref=e11]:
+          - link "Ingest Indicator" [ref=e12] [cursor=pointer]:
+            - /url: /report
+            - img [ref=e13]
+            - generic [ref=e15]: Ingest Indicator
+          - link "Analyst Portal" [ref=e16] [cursor=pointer]:
+            - /url: /login
+            - img [ref=e17]
+            - generic [ref=e20]: Analyst Portal
+    - generic [ref=e22]:
+      - img [ref=e25]
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: Analyst Authentication
+          - generic [ref=e31]: Restricted SOC Clearance Required
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - text: Email Address
+            - textbox "analyst@sentinelhub.com" [ref=e35]: test@sentinelhub.com
+          - generic [ref=e36]:
+            - text: Passphrase
+            - textbox "••••••••" [ref=e37]: testpassword123
+          - generic [ref=e38]: "[!] Invalid login credentials"
+          - button "AUTHORIZE" [ref=e39]:
+            - generic [ref=e40]:
+              - img
+              - text: AUTHORIZE
+  - button "Open Next.js Dev Tools" [ref=e46] [cursor=pointer]:
+    - img [ref=e47]
+  - alert [ref=e50]
+```

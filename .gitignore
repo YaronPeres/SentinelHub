@@ -1,4 +1,4 @@
-# dependencies
+# --- Dependencies ---
 /node_modules
 /.pnp
 .pnp.*
@@ -8,29 +8,38 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# --- Next.js Build Output ---
 /.next/
 /out/
-
-# production
 /build
 
-# misc
-.DS_Store
-*.pem
+# --- Environment Secrets (CRITICAL) ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+# Don't ignore .env.example (it's safe and helps the Agent know which keys to use)
+!.env.example
 
-# debug
+# --- Supabase Specifics ---
+# Ignore local Supabase DB migrations/configs if you use the CLI
+.supabase/
+supabase/.temp/
+
+# --- Security & Debug ---
+*.pem
+*.key
+.DS_Store
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# env files
-.env*.local
-
-# typescript
+# --- TypeScript ---
 *.tsbuildinfo
 next-env.d.ts
+
+# --- Testing ---
+/coverage
