@@ -20,7 +20,7 @@ export default function LandingPage() {
         </h1>
 
         <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
-          Secure your perimeter with military-grade SOC analytics...
+          Secure your perimeter with military-grade SOC analytics.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
