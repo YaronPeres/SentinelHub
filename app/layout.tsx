@@ -13,6 +13,13 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "SentinelHub",
+  description: "SOC Analyst Dashboard",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,6 +31,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", roboto.variable)}
     >
+      <head>
+        <meta name="darkreader-lock" />
+      </head>
       <body suppressHydrationWarning={true}>
         <ThemeProvider>
           <TooltipProvider>
