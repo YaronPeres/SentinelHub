@@ -2,6 +2,7 @@ import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/sidebar"
 import { redirect } from "next/navigation"
 import { createClient } from "@/utils/supabase/server"
+import { IngestFAB } from "@/components/IngestFAB"
 
 export default async function DashboardLayout({
   children,
@@ -24,6 +25,7 @@ export default async function DashboardLayout({
           <div className="h-full relative z-10 flex flex-col items-center justify-center">
              {children}
           </div>
+          <IngestFAB />
         </main>
       </div>
     </SidebarProvider>

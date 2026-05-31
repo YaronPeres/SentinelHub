@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sidebar"
 import { ShieldAlert, Crosshair, Database, PieChart } from "lucide-react"
 import { AuditLog } from "@/components/AuditLog"
+import { LogoutButton } from "@/components/LogoutButton"
 
 // Menu items utilizing the SOC terminology defined in the ux-copywriter skill.
 const items = [
@@ -18,11 +19,6 @@ const items = [
     title: "Command Center",
     url: "/dashboard",
     icon: Crosshair,
-  },
-  {
-    title: "Threat Ingest",
-    url: "/dashboard/ingest",
-    icon: ShieldAlert,
   },
   {
     title: "Intel Vault",
@@ -37,7 +33,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="flex items-center justify-between text-cyan-400 font-mono tracking-wider">
-            <span>SentinelHub</span>
+            <span>SentinelZone</span>
             <Link href="/" className="text-xs text-white/50 hover:text-cyan-300 transition-colors flex items-center gap-1">
               &larr; Site
             </Link>
@@ -57,10 +53,11 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        
+
         {/* Activity Feed / Audit Log */}
-        <div className="mt-auto pb-4">
+        <div className="mt-auto px-2 pb-4 flex flex-col gap-4">
           <AuditLog />
+          <LogoutButton />
         </div>
       </SidebarContent>
     </Sidebar>

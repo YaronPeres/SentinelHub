@@ -7,7 +7,7 @@ test.describe('SOC Navigation & Route Grouping', () => {
   test('unauthenticated users are redirected from /dashboard to /login', async ({ page }) => {
     // Attempt to access the secured analyst portal
     await page.goto('/dashboard');
-    
+
     // The middleware should intercept and redirect to the login page
     await expect(page).toHaveURL(/.*\/login/);
     await expect(page.getByText(/Analyst Authentication/i)).toBeVisible();
@@ -19,11 +19,11 @@ test.describe('SOC Navigation & Route Grouping', () => {
   test('internal Threat Ingest retains the dashboard Sidebar layout', async ({ page }) => {
     // Perform a real login to satisfy the extensive Supabase SSR Middleware cookies
     await page.goto('/login');
-    
+
     // Fill in demo credentials (assuming an account exists or the middleware will still kick us out)
     // If the DB is completely empty, this test will fail until a user is registered. 
     // We will attempt login and wait for the dashboard redirection.
-    await page.getByPlaceholder('analyst@sentinelhub.com').fill('test@sentinelhub.com');
+    await page.getByPlaceholder('analyst@SentinelZone.com').fill('test@SentinelZone.com');
     await page.getByPlaceholder('••••••••').fill('testpassword123');
     await page.getByRole('button', { name: /AUTHORIZE/i }).click();
 
@@ -41,7 +41,7 @@ test.describe('SOC Navigation & Route Grouping', () => {
     // CRITICAL: The Sidebar Navigation must still be visible on the screen
     await expect(page.getByRole('navigation')).toBeVisible();
     await expect(page.getByText('Intel Vault')).toBeVisible();
-    
+
     // And the Ingest Form itself should be visible
     await expect(page.getByText('Threat Ingestion')).toBeVisible();
   });
