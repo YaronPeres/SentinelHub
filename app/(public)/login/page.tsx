@@ -42,7 +42,7 @@ export default function LoginPage() {
           <ShieldCheck className="h-10 w-10 text-cyan-400" />
         </div>
       </div>
-      
+
       <Card className="bg-white/5 backdrop-blur-xl border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
         <CardHeader className="space-y-1 text-center border-b border-white/5 pb-6">
           <CardTitle className="text-2xl font-bold tracking-tight text-white uppercase">Analyst Authentication</CardTitle>
@@ -56,21 +56,21 @@ export default function LoginPage() {
               <label className="text-sm font-medium text-cyan-100/80 uppercase tracking-widest text-xs">
                 Email Address
               </label>
-              <Input 
-                type="email" 
+              <Input
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="bg-black/50 border-white/10 focus-visible:ring-cyan-500 text-white placeholder:text-white/20"
-                placeholder="analyst@sentinelhub.com"
+                placeholder="analyst@SentinelZone.com"
               />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium text-cyan-100/80 uppercase tracking-widest text-xs">
                 Passphrase
               </label>
-              <Input 
-                type="password" 
+              <Input
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -85,8 +85,8 @@ export default function LoginPage() {
               </div>
             )}
 
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={isLoading}
               className="w-full bg-cyan-600/20 text-cyan-100 border border-cyan-500/50 hover:bg-cyan-600/40 hover:text-white font-mono tracking-widest mt-6"
             >

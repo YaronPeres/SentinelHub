@@ -1,7 +1,7 @@
-🛡️ SentinelHub: Next-Gen Autonomous SOC
+🛡️ SentinelZone: Next-Gen Autonomous SOC
 The Future of Threat Ingestion and Geographic Triage.
 
-SentinelHub is a high-performance Security Operations Center (SOC) platform built to automate the ingestion, enrichment, and classification of global threat indicators. It solves the "Context Gap" in modern security by mandating a User vs. Distance resolution logic, ensuring every incident is backed by geographic telemetry.
+SentinelZone is a high-performance Security Operations Center (SOC) platform built to automate the ingestion, enrichment, and classification of global threat indicators. It solves the "Context Gap" in modern security by mandating a User vs. Distance resolution logic, ensuring every incident is backed by geographic telemetry.
 
 🚀 The Technical "Edge"
 This project is built on the 2026 Bleeding-Edge Stack, utilizing the latest major releases for maximum performance and security:

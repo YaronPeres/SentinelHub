@@ -1,4 +1,4 @@
--- SentinelHub Database Schema
+-- SentinelZone Database Schema
 
 -- Custom Types (Enums)
 CREATE TYPE public.incident_type AS ENUM ('IP', 'URL', 'Email');
