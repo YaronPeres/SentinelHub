@@ -3,6 +3,8 @@
 
 > *"EDRs generate noise. SentinelZone extracts signal."*
 
+🌐 **Live Demo:** [sentinel-hub-nu.vercel.app](https://sentinel-hub-nu.vercel.app)
+
 ![Landing Page](./public/screenshots/landing-page.png)
 
 Modern Security Operations Centers (SOCs) are drowning in alerts. Traditional EDR platforms generate thousands of raw logs daily, creating massive alert fatigue and leading to missed critical threats.
