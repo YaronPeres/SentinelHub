@@ -13,20 +13,27 @@ Modern Security Operations Centers (SOCs) are drowning in alerts. Traditional En
 
 ## ✨ Core Cyber Capabilities
 
-### 1. Zero-Friction Threat Ingestion
-Security relies on rapid reporting. SentinelZone provides an instantaneous, anonymous public portal for employees, sensors, or automated bots to submit Indicators of Compromise (IoCs).
+### 1. Zero-Friction Threat Ingestion & Multi-Vector Enrichment
+Security relies on rapid reporting. SentinelZone provides an instantaneous, anonymous public portal for employees, sensors, or automated bots to submit Indicators of Compromise (IoCs). Once an indicator is submitted, the ingestion engine automatically performs deep, multi-vector enrichment depending on the payload type:
+
+- **IP Addresses:** 
+  - Performs real-time geographic lookups via **ip-api**.
+  - Calculates physical distances using the **Haversine formula** to map proximity to HQ or trusted endpoints.
+- **URLs / Domains:** 
+  - Resolves domain names to IP addresses via **Node DNS**.
+  - Executes **SSL/TLS Probes** to check certificate validity and secure connections.
+  - Cross-references the domain against the **OpenPhish Community Feed** to instantly flag known credential harvesters.
+- **Email Addresses:** 
+  - Queries the **LeakCheck API** to determine if the email has been exposed in known data breaches.
+  - Validates deliverability and checks for disposable/burner addresses using the **Disify API**.
 
 ![Threat Ingestion](./public/screenshots/threat-ingestion.png)
 
-- **Agnostic Payload Acceptance:** Instantly ingest suspicious IP addresses, malicious URLs, or spear-phishing email origins.
-- **Contextual Logging:** Capture not just the indicator, but the behavioral context of the anomaly for downstream analyst review.
-
 ### 2. The "Distance Delta" Auto-Triage
-The true power of SentinelZone lies in its automated enrichment pipeline. It doesn't just log a threat; it actively analyzes it *in-transit*.
+The true power of SentinelZone lies in its geographic correlation pipeline. It doesn't just log a threat; it actively analyzes physical impossibility.
 
-- **Metadata Extraction:** The system automatically captures the origin IP of the entity reporting the threat.
-- **Real-Time Geolocation:** It performs a simultaneous geographic lookup on both the reporter and the threat indicator.
-- **Automated Anomaly Detection:** If the distance between the reporter and the target exceeds logical thresholds (e.g., a US-based employee reporting an internal login attempt originating from a foreign state), the system automatically flags the incident as a **Distance Anomaly**. 
+- **Dual-IP Evaluation:** The system can evaluate the physical distance between a trusted IP and a reported IP.
+- **Automated Anomaly Detection:** If the calculated distance between the two endpoints exceeds logical thresholds (e.g., >500km), the system automatically flags the incident as a **Distance Anomaly**, elevating its severity to Critical. 
 
 ### 3. Analyst Command Center & Justified Closure
 A specialized, high-density dashboard built for rapid, conclusive decision-making by security analysts.
